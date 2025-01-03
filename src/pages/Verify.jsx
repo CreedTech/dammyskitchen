@@ -10,7 +10,7 @@
 
 //     const { navigate, token, setCartItems, backendUrl } = useContext(ShopContext)
 //     const [searchParams, setSearchParams] = useSearchParams()
-    
+
 //     const success = searchParams.get('success')
 //     const orderId = searchParams.get('orderId')
 
@@ -49,9 +49,6 @@
 
 // export default Verify
 
-
-
-
 import React, { useEffect, useContext } from 'react';
 import { ShopContext } from '../context/ShopContext';
 import { useSearchParams } from 'react-router-dom';
@@ -59,36 +56,38 @@ import { toast } from 'react-toastify';
 import axios from 'axios';
 
 const Verify = () => {
-    const { navigate, token, setCartItems, backendUrl } = useContext(ShopContext);
-    const [searchParams] = useSearchParams();
-    
-    const success = searchParams.get('success');
-    const orderId = searchParams.get('orderId');
+  const { navigate, token, setCartItems, backendUrl } = useContext(ShopContext);
+  const [searchParams] = useSearchParams();
 
-    // The verifyPayment function is now redundant, since the payment is verified via webhook.
-    useEffect(() => {
-        if (success === 'true') {
-            // Payment was successful
-            toast.success('Payment successful!');
+  const success = searchParams.get('success');
+  const orderId = searchParams.get('orderId');
 
-            // Optionally, you can clear the cart and redirect to the orders page
-            setCartItems({});
-            navigate('/orders');
-        } else {
-            // Payment failed
-            toast.error('Payment failed, please try again.');
+  // The verifyPayment function is now redundant, since the payment is verified via webhook.
+  useEffect(() => {
+    console.log('Success:', success); // Log success value
+    console.log('Order ID:', orderId);
+    if (success === 'true') {
+      // Payment was successful
+      toast.success('Payment successful!');
 
-            // Redirect to cart or another relevant page
-            navigate('/cart');
-        }
-    }, [success, orderId, navigate, setCartItems]);
+      // Optionally, you can clear the cart and redirect to the orders page
+      setCartItems({});
+      navigate('/orders');
+    } else {
+      // Payment failed
+      toast.error('Payment failed, please try again.');
 
-    return (
-        <div>
-            {/* You can show a loading message while waiting for the response */}
-            {success === null && <div>Verifying payment...</div>}
-        </div>
-    );
+      // Redirect to cart or another relevant page
+      navigate('/cart');
+    }
+  }, [success, orderId, navigate, setCartItems]);
+
+  return (
+    <div>
+      {/* You can show a loading message while waiting for the response */}
+      {success === null && <div>Verifying payment...</div>}
+    </div>
+  );
 };
 
 export default Verify;
