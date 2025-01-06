@@ -68,7 +68,7 @@ import star_icon from './star_icon.png';
 import support_img from './support_img.png';
 import menu_icon from './menu_icon.png';
 import about_img from './about_img.png';
-import about_food from './about_food.jpeg';
+import about_food from './about_food.jpg';
 import contact_img from './contact_img.png';
 import razorpay_logo from './razorpay_logo.png';
 import stripe_logo from './stripe_logo.png';
