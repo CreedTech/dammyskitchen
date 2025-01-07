@@ -28,3 +28,27 @@ a.active hr{
         color: white;
     }
   }
+
+
+  .bg-pink100 {
+    background-color: #fbcfe8;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .bg-slate200 {
+    background-color: #e2e8f0;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .text-red-500 {
+    color: #ef4444;
+  }
+  
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  
+  .rounded {
+    border-radius: 0.375rem;
+  }
+  
