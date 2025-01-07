@@ -73,7 +73,7 @@ const Product = () => {
 
       // Add size price
       if (size) {
-        const selectedSize = productData.sizes.find((s) => s.name === size);
+        const selectedSize = productData.containerSizes.find((s) => s.size === size);
         if (selectedSize) {
           price += selectedSize.price;
           console.log('Selected Size Price:', selectedSize.price);
@@ -133,15 +133,15 @@ const Product = () => {
             {productData.image.map((item, index) => (
               <div
                 key={index}
-                className={`relative w-[75px] h-[75px] sm:w-full sm:h-[100px] mb-3 flex-shrink-0 cursor-pointer ${
-                  item === image ? 'border-2 border-black' : 'hover:opacity-80'
+                className={`relative w-[75px] h-[75px] sm:w-full sm:h-[100px] mb-2 md:mx-0 mx-2 flex-shrink-0 cursor-pointer   ${
+                  item === image ? 'border-2 border-black rounded-md' : 'hover:opacity-80'
                 }`}
                 onClick={() => setImage(item)}
               >
                 <img
                   src={item}
                   alt={`Thumbnail ${index + 1}`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-md"
                 />
               </div>
             ))}
@@ -150,7 +150,7 @@ const Product = () => {
           <div className="w-full sm:w-[80%] max-w-[600px] mx-auto">
             <div className="relative w-full h-[400px]">
               <img
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover rounded-md"
                 src={image}
                 alt="Selected Product Image"
               />
@@ -194,23 +194,7 @@ const Product = () => {
               <div className="my-8">
                 <p>Select Extra Protein</p>
                 <div className="relative max-w-[600px]">
-                  {/* Left Scroll Button */}
-                  {/* {canScrollLeft && (
-                    <button
-                      className="absolute left-0 top-1/2 transform -translate-y-1/2  py-4 px-5 rounded-full z-10 bg-white text-xl font-light shadow-lg hover:shadow-xl transition-shadow duration-200"
-                      style={{
-                        boxShadow: '4px 4px 10px rgba(0, 0, 0, 0.2)', // Bottom-right shadow
-                      }}
-                      onClick={() => {
-                        scrollContainerRef.current.scrollBy({
-                          left: -200,
-                          behavior: 'smooth',
-                        });
-                      }}
-                    >
-                      <p className="text-orange-500">←</p>
-                    </button>
-                  )} */}
+                 
                   {/* Scrollable Container */}
                   <div
                     // ref={scrollContainerRef}
@@ -272,54 +256,28 @@ const Product = () => {
                             </button>
                           </div>
                         </div>
-                        {/* <br /> */}
-
-                        {/* +£{protein.price} */}
                       </div>
                     ))}
                   </div>
 
-                  {/* Right Scroll Button */}
-                  {/* {canScrollRight && (
-                    <button
-                      className="absolute right-0 top-1/2 transform -translate-y-1/2  p-2 rounded-full z-10  py-4 px-5  bg-white text-xl font-light shadow-lg hover:shadow-xl transition-shadow duration-200"
-                      style={{
-                        boxShadow: '4px 4px 10px rgba(0, 0, 0, 0.2)', // Bottom-right shadow
-                      }}
-                      onClick={() => {
-                        scrollContainerRef.current.scrollBy({
-                          left: 200,
-                          behavior: 'smooth',
-                        });
-                      }}
-                    >
-                      <p className="text-orange-500">→</p>
-                    </button>
-                  )} */}
+                
                 </div>
               </div>
 
               {/* Select Spice Level */}
               <div className="my-8">
                 <p>Select Spice Level</p>
-                <div className="flex gap-2">
+                <div className="flex gap-2 flex-wrap">
                   {productData.spiceLevels.map((level) => (
                      <div
                      key={level}
-                     onClick={() =>
-                      setSelectedSpiceLevel(
-                         (prev) =>
-                           prev.includes(level)
-                             ? prev.filter((item) => item !== level) // Remove level if already selected
-                             : [...prev, level] // Add level if not already selected
-                       )
-                     }
+                     onClick={() => setSelectedSpiceLevel(level)} 
                    >
                      <div
-                       className={`flex items-center justify-center px-3 py-1 cursor-pointer rounded `}
+                       className={`flex items-center justify-center px-3 py-1 cursor-pointer rounded  `}
                        style={{
-                         backgroundColor: selectedSpiceLevel.includes(level)
-                           ? '#fbcfe8'
+                         backgroundColor: selectedSpiceLevel === level
+                           ? 'red'
                            : '#e2e8f0',
                          transition: 'background-color 0.3s ease-in-out',
                          borderRadius: '0.375rem',
@@ -343,16 +301,16 @@ const Product = () => {
               {/* Select Size */}
               <div className="my-8">
                 <p>Select Size</p>
-                <div className="flex gap-2">
+                <div className="flex gap-2 flex-wrap">
                   {productData.containerSizes.map((item) => (
                     <button
-                      onClick={() => setSize(item.name)}
-                      className={`border py-2 px-4 bg-gray-100 ${
-                        item.name === size ? 'border-orange-500' : ''
+                      onClick={() => setSize(item.size)}
+                      className={`border py-2 px-4  rounded-md ${
+                        item.size === size ? 'border-orange-500  border-2' : 'bg-gray-100'
                       }`}
-                      key={item.name}
+                      key={item.size}
                     >
-                      {item.name} (+£{item.price})
+                      {item.size} <br/> (£{item.price})
                     </button>
                   ))}
                 </div>
