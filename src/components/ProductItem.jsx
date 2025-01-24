@@ -15,7 +15,7 @@ const ProductItem = ({ id, image, name, price }) => {
         <img
           className="hover:scale-110 transition ease-in-out h-[200px] w-[200px] sm:h-[250px] sm:w-[250px] md:h-[300px] md:w-[300px] object-cover rounded-sm"
           src={image[0]}
-          alt=""
+          alt={name}
         />
       </div>
       <p className="pt-3 pb-1 text-base">{name}</p>

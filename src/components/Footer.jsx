@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 import { assets } from '../assets/assets';
 
 const Footer = () => {
@@ -6,10 +6,14 @@ const Footer = () => {
     <div>
       <div className="flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm">
         <div>
-          <img src={assets.logo} className="mb-5 w-32" alt="" />
+          <img
+            src={assets.logo}
+            className="mb-5 w-32"
+            alt="DammyKitchen Logo"
+          />
           <p className="w-full md:w-2/3 text-gray-600">
-            Dammy&apos;s kitchen &Catering and Events Ltd is a catering company in UK
-            which specialise in Nigeria cuisine most especially Nigerian
+            Dammy&apos;s kitchen &Catering and Events Ltd is a catering company
+            in UK which specialise in Nigeria cuisine most especially Nigerian
             cuisine. As a business, the company caters for events such as
             weddings, birthdays, corporate events,
           </p>
@@ -17,12 +21,20 @@ const Footer = () => {
 
         <div>
           <p className="text-xl font-medium mb-5">COMPANY</p>
-          <ul className="flex flex-col gap-1 text-gray-600">
-            <li>Home</li>
-            <li>About us</li>
-            <li>Our Services</li>
-            <li>Gallery</li>
-            <li>Contact Us</li>
+          <ul className="flex flex-col gap-1 text-gray-600 cursor-pointer">
+            <li>
+              {' '}
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About us</Link>
+            </li>
+            <li>
+              <Link to="/collection">Our Services</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact Us</Link>
+            </li>
           </ul>
         </div>
 
@@ -30,7 +42,12 @@ const Footer = () => {
           <p className="text-xl font-medium mb-5">GET IN TOUCH</p>
           <ul className="flex flex-col gap-1 text-gray-600">
             <li>@dammy&apos;s kitchen </li>
-            <li> <a href='mailto:Damilolabisola85@gmail.com'>Damilolabisola85@gmail.com</a></li>
+            <li>
+              {' '}
+              <a href="mailto:Damilolabisola85@gmail.com">
+                Damilolabisola85@gmail.com
+              </a>
+            </li>
           </ul>
         </div>
       </div>

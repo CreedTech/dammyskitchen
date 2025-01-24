@@ -17,7 +17,7 @@ const Home = () => {
           <img
             src={assets.items_banner}
             className="w-[80%] m-auto mb-5"
-            alt=""
+            alt="Home Banner"
           />
         </div>
       </div>
