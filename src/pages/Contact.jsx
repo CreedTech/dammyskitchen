@@ -4,10 +4,12 @@ import { assets } from '../assets/assets';
 import { ShopContext } from '../context/ShopContext';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import LoadingOverlay from '../components/LoadingOverlay';
 // import NewsletterBox from '../components/NewsletterBox';
 
 const Contact = () => {
   const { backendUrl } = useContext(ShopContext);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -24,6 +26,7 @@ const Contact = () => {
   };
 
   const handleSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
 
     try {
@@ -39,6 +42,8 @@ const Contact = () => {
     } catch (error) {
       console.error('Error submitting form:', error);
       toast.error('There was an error processing your request');
+    } finally {
+      setLoading(false);
     }
   };
   return (
@@ -70,6 +75,8 @@ const Contact = () => {
         {/* <p className='text-gray-400 mt-3'>
       Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
       </p> */}
+         <LoadingOverlay isLoading={loading} />
+        {/* {loading && <LoadingOverlay />} */}
         <form
           className="w-full sm:w-1/2 flex flex-col gap-4 mx-auto my-6 border p-3"
           onSubmit={handleSubmit}
