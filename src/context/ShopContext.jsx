@@ -19,6 +19,11 @@ const ShopContextProvider = (props) => {
   const navigate = useNavigate();
 
   const addToCart = async (itemId, totalPrice, spiceLevel, size, protein) => {
+    if (!token) {
+      toast.warning('You need to login to perform this action');
+      navigate('/login');
+      return;
+    }
     if (!size) {
       toast.error('Select Product Size');
       return;

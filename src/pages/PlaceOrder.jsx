@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Title from '../components/Title';
 import CartTotal from '../components/CartTotal';
 import { assets } from '../assets/assets';
@@ -72,18 +72,11 @@ const PlaceOrder = () => {
     try {
       let orderItems = [];
 
-      // for (const items in cartItems) {
-      //     for (const item in cartItems[items]) {
-      //         if (cartItems[items][item] > 0) {
-      //             const itemInfo = structuredClone(products.find(product => product._id === items))
-      //             if (itemInfo) {
-      //                 itemInfo.size = item
-      //                 itemInfo.quantity = cartItems[items][item]
-      //                 orderItems.push(itemInfo)
-      //             }
-      //         }
-      //     }
-      // }
+      if (!token) {
+        navigate('/login');
+        return;
+      }
+
       // Loop through `cartItems` (matches your `cartData` structure)
       for (const productId in cartItems) {
         const productCart = cartItems[productId];
@@ -173,6 +166,13 @@ const PlaceOrder = () => {
       toast.error(error.message);
     }
   };
+
+  useEffect(() => {
+    if (!token) {
+      toast.warning('You need to login to perform this action');
+      navigate('/login');
+    }
+  }, [navigate, token]);
 
   return (
     <form
