@@ -8,7 +8,7 @@ const SEO = ({
   description = 'Get fast, affordable Nigerian meals delivered in London. Order online now from DammysKitchen.',
   url = 'https://dammyskitchen.vercel.app',
   image = assets.logo,
-  keywords = 'Nigerian food London, order Nigerian food online, African meals delivery, DammysKitchen, food delivery London',
+  keywords = 'Nigerian food London, order Nigerian food online, African meals delivery, DammysKitchen, food delivery London, Nigerian meals London, Nigerian cuisine London, African food delivery London, Nigerian restaurant London, jollof rice London, suya delivery London, Nigerian takeout London, best Nigerian food London, Nigerian food near me, traditional Nigerian meals, spicy Nigerian food London, Nigerian fast food London, Afro-Caribbean food London, Nigerian food home delivery, Nigerian catering London, egusi soup London, pounded yam London, efo riro London, jollof rice London, fried rice London, amala delivery London, eba and soup London, nkwobi London, pepper soup London, moi moi London, asun delivery London, Nigerian snacks London, gizdodo London, Nigerian stew delivery London, African dishes UK, authentic Nigerian meals London, Nigerian food for parties London, Nigerian delicacies UK, order African food London, Nigerian breakfast London, Nigerian lunch delivery, Nigerian dinner delivery',
   twitterHandle = '@dammyskitchen',
 }) => (
   <Helmet>
@@ -49,12 +49,13 @@ const SEO = ({
     <link rel="canonical" href={url} />
 
     {/* Favicon */}
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href={assets.logo} />
     <script type="application/ld+json">
       {`
       {
         "@context": "https://schema.org",
-        "@type": "Restaurant",
+        "@type": "DeliveryRestaurant",
+        "@id": "https://dammyskitchen.vercel.app",
         "name": "DammysKitchen",
         "image": "https://dammyskitchen.vercel.app/logo.png",
         "url": "https://dammyskitchen.vercel.app",
@@ -73,7 +74,7 @@ const SEO = ({
           "https://www.instagram.com/dammyskitchen",
           "https://twitter.com/dammyskitchen"
         ],
-        "menu": "https://dammyskitchen.vercel.app/menu",
+        "menu": "https://dammyskitchen.vercel.app/collection",
         "acceptsReservations": "True",
         "servesCuisine": "Nigerian",
         "priceRange": "££",
