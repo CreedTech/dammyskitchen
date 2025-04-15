@@ -14,6 +14,10 @@ const SEO = ({
   <Helmet>
     {/* Basic SEO */}
     <title>{title}</title>
+    <meta
+      name="google-site-verification"
+      content="mk-64cc-8NanV6BV2XKV4bdHae1GiAmQHIP3jqmNDvU"
+    />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
     <meta name="author" content="DammysKitchen" />
