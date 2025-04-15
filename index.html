@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
@@ -9,6 +9,26 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-    <script src="https://checkout.razorpay.com/v1/checkout.js"> </script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "DammysKitchen",
+        "image": "https://dammyskitchen.vercel.app/logo.png",
+        "url": "https://dammyskitchen.vercel.app",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "London",
+          "addressCountry": "UK"
+        },
+        "servesCuisine": "Nigerian",
+        "priceRange": "££",
+        "sameAs": [
+          "https://instagram.com/dammyskitchen",
+          "https://facebook.com/dammyskitchen"
+        ]
+      }
+    </script>
   </body>
 </html>
