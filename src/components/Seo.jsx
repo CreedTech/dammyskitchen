@@ -47,6 +47,37 @@ const SEO = ({
 
     {/* Favicon */}
     <link rel="icon" href="/favicon.ico" />
+    <script type="application/ld+json">
+      {`
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "DammysKitchen",
+        "image": "https://dammyskitchen.vercel.app/logo.png",
+        "url": "https://dammyskitchen.vercel.app",
+        "logo": "https://dammyskitchen.vercel.app/logo.png",
+        "description": "DammysKitchen offers delicious, authentic Nigerian food delivered fast across London. Order online today.",
+        "telephone": "+44-20-1234-5678",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123 Nigerian St",
+          "addressLocality": "London",
+          "addressCountry": "GB",
+          "postalCode": "E1 6AN"
+        },
+        "sameAs": [
+          "https://www.facebook.com/dammyskitchen",
+          "https://www.instagram.com/dammyskitchen",
+          "https://twitter.com/dammyskitchen"
+        ],
+        "menu": "https://dammyskitchen.vercel.app/menu",
+        "acceptsReservations": "True",
+        "servesCuisine": "Nigerian",
+        "priceRange": "££",
+        "openingHours": "Mo-Su 10:00-22:00"
+      }
+    `}
+    </script>
   </Helmet>
 );
 
