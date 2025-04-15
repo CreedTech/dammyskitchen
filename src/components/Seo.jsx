@@ -25,6 +25,9 @@ const SEO = ({
     <meta property="og:url" content={url} />
     <meta property="og:image" content={image} />
     <meta property="og:site_name" content="DammysKitchen" />
+    <meta property="og:image:alt" content={description} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     {/* Twitter */}
     <meta name="twitter:card" content="summary_large_image" />
