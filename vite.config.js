@@ -1,26 +1,20 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-// import ssr from 'vite-plugin-ssr/plugin';
-// import pagesPlugin from 'vite-plugin-pages';
-import { ViteSitemap } from 'vite-plugin-sitemap';
+import vitePluginSitemap from 'vite-plugin-sitemap';
 import { createHtmlPlugin } from 'vite-plugin-html';
-import { viteSSG } from 'vite-ssg/serialized-data';
+// import prerender from 'vite-plugin-prerender';
 
-const routes = [
-  { path: '/', name: 'Home' },
-  { path: '/collection', name: 'Collection' },
-  { path: '/orders', name: 'Orders' },
-  { path: '/contact', name: 'Contact' },
-  { path: '/about', name: 'About' },
-];
+const routes = ['/', '/collection', '/orders', '/contact', '/about'];
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
-    viteSSG({ includedRoutes: () => routes }),
-    ViteSitemap({
-      baseUrl: 'https://yourdomain.com',
+    // prerender({
+    //   staticDir: 'dist',
+    //   routes,
+    // }),
+    vitePluginSitemap({
+      baseUrl: 'https://dammyskitchen.vercel.app',
       routes,
       generateRobotsTxt: true,
     }),
