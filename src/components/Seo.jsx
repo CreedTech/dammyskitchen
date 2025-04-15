@@ -9,7 +9,6 @@ const SEO = ({
   url = 'https://dammyskitchen.vercel.app',
   image = assets.logo,
   keywords = 'Nigerian food London, order Nigerian food online, African meals delivery, DammysKitchen, food delivery London, Nigerian meals London, Nigerian cuisine London, African food delivery London, Nigerian restaurant London, jollof rice London, suya delivery London, Nigerian takeout London, best Nigerian food London, Nigerian food near me, traditional Nigerian meals, spicy Nigerian food London, Nigerian fast food London, Afro-Caribbean food London, Nigerian food home delivery, Nigerian catering London, egusi soup London, pounded yam London, efo riro London, jollof rice London, fried rice London, amala delivery London, eba and soup London, nkwobi London, pepper soup London, moi moi London, asun delivery London, Nigerian snacks London, gizdodo London, Nigerian stew delivery London, African dishes UK, authentic Nigerian meals London, Nigerian food for parties London, Nigerian delicacies UK, order African food London, Nigerian breakfast London, Nigerian lunch delivery, Nigerian dinner delivery',
-  twitterHandle = '@dammyskitchen',
 }) => (
   <Helmet>
     {/* Basic SEO */}
@@ -32,13 +31,6 @@ const SEO = ({
     <meta property="og:image:alt" content={description} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-
-    {/* Twitter */}
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
-    <meta name="twitter:creator" content={twitterHandle} />
 
     {/* Mobile/Browser Friendly */}
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -75,8 +67,7 @@ const SEO = ({
         },
         "sameAs": [
           "https://www.facebook.com/dammyskitchen",
-          "https://www.instagram.com/dammyskitchen",
-          "https://twitter.com/dammyskitchen"
+          "https://www.instagram.com/dammys_kictchen?utm_source=qr&igsh=OGJ5NmVudnQyaTA3",
         ],
         "menu": "https://dammyskitchen.vercel.app/collection",
         "acceptsReservations": "True",
