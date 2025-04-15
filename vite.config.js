@@ -13,11 +13,11 @@ export default defineConfig({
     //   staticDir: 'dist',
     //   routes,
     // }),
-    vitePluginSitemap({
-      baseUrl: 'https://dammyskitchen.vercel.app',
-      routes,
-      generateRobotsTxt: true,
-    }),
+    // vitePluginSitemap({
+    //   baseUrl: 'https://dammyskitchen.vercel.app',
+    //   routes,
+    //   generateRobotsTxt: true,
+    // }),
     createHtmlPlugin({
       minify: true,
       inject: {
