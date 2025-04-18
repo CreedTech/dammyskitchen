@@ -96,7 +96,7 @@ const Collection = () => {
       <SEO
         title="Browse our Collection and Order Nigerian Food Online | DammysKitchen"
         description="Hot and fresh Nigerian meals delivered fast in London. Order online now."
-        url="https://dammyskitchen.vercel.app/collection"
+        url="https://www.dammyskitchen.co.uk/collection"
       />
 
       <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">

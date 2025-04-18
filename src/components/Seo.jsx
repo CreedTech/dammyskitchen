@@ -6,7 +6,7 @@ import { assets } from '../assets/assets';
 const SEO = ({
   title = 'Order Nigerian Food in London | DammysKitchen',
   description = 'Get fast, affordable Nigerian meals delivered in London. Order online now from DammysKitchen.',
-  url = 'https://dammyskitchen.vercel.app',
+  url = 'https://www.dammyskitchen.co.uk',
   image = assets.logo,
   keywords = 'Nigerian food London, order Nigerian food online, African meals delivery, DammysKitchen, food delivery London, Nigerian meals London, Nigerian cuisine London, African food delivery London, Nigerian restaurant London, jollof rice London, suya delivery London, Nigerian takeout London, best Nigerian food London, Nigerian food near me, traditional Nigerian meals, spicy Nigerian food London, Nigerian fast food London, Afro-Caribbean food London, Nigerian food home delivery, Nigerian catering London, egusi soup London, pounded yam London, efo riro London, jollof rice London, fried rice London, amala delivery London, eba and soup London, nkwobi London, pepper soup London, moi moi London, asun delivery London, Nigerian snacks London, gizdodo London, Nigerian stew delivery London, African dishes UK, authentic Nigerian meals London, Nigerian food for parties London, Nigerian delicacies UK, order African food London, Nigerian breakfast London, Nigerian lunch delivery, Nigerian dinner delivery',
 }) => (
@@ -51,11 +51,11 @@ const SEO = ({
       {
         "@context": "https://schema.org",
         "@type": "DeliveryRestaurant",
-        "@id": "https://dammyskitchen.vercel.app",
+        "@id": "https://www.dammyskitchen.co.uk",
         "name": "DammysKitchen",
-        "image": "https://dammyskitchen.vercel.app/logo.png",
-        "url": "https://dammyskitchen.vercel.app",
-        "logo": "https://dammyskitchen.vercel.app/logo.png",
+        "image": "https://www.dammyskitchen.co.uk/logo.png",
+        "url": "https://www.dammyskitchen.co.uk",
+        "logo": "https://www.dammyskitchen.co.uk/logo.png",
         "description": "DammysKitchen offers delicious, authentic Nigerian food delivered fast across London. Order online today.",
         "telephone": "+44-20-1234-5678",
         "address": {
@@ -69,7 +69,7 @@ const SEO = ({
           "https://www.facebook.com/dammyskitchen",
           "https://www.instagram.com/dammys_kictchen?utm_source=qr&igsh=OGJ5NmVudnQyaTA3",
         ],
-        "menu": "https://dammyskitchen.vercel.app/collection",
+        "menu": "https://www.dammyskitchen.co.uk/collection",
         "acceptsReservations": "True",
         "servesCuisine": "Nigerian",
         "priceRange": "££",

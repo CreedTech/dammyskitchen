@@ -14,7 +14,7 @@ export default defineConfig({
     //   routes,
     // }),
     // vitePluginSitemap({
-    //   baseUrl: 'https://dammyskitchen.vercel.app',
+    //   baseUrl: 'https://server.dammyskitchen.co.uk',
     //   routes,
     //   generateRobotsTxt: true,
     // }),

@@ -9,7 +9,7 @@ const About = () => {
       <SEO
         title="About DammysKitchen | Authentic Nigerian Food in London"
         description="Learn more about the mission behind DammysKitchen, your go-to for Nigerian food delivery in London."
-        url="https://dammyskitchen.vercel.app/about"
+        url="https://www.dammyskitchen.co.uk/about"
       />
 
       <div>

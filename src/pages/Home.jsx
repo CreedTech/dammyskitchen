@@ -12,7 +12,7 @@ const Home = () => {
       <SEO
         title="DammysKitchen | Nigerian Food Delivery in London"
         description="Craving Nigerian food? DammysKitchen delivers fresh, authentic meals across London. Order online now!"
-        url="https://dammyskitchen.vercel.app"
+        url="https://www.dammyskitchen.co.uk"
       />
 
       <div>
