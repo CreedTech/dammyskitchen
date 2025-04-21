@@ -129,8 +129,10 @@ const PlaceOrder = () => {
           );
           if (response.data.success) {
             setCartItems({});
+            setLoading(false);
             navigate('/orders');
           } else {
+            setLoading(false);
             toast.error(response.data.message);
           }
           break;
@@ -143,9 +145,11 @@ const PlaceOrder = () => {
             { headers: { token } }
           );
           if (responseStripe.data.success) {
+            setLoading(false);
             const { session_url } = responseStripe.data;
             window.location.replace(session_url);
           } else {
+            setLoading(false);
             toast.error(responseStripe.data.message);
           }
           break;
@@ -158,6 +162,7 @@ const PlaceOrder = () => {
             { headers: { token } }
           );
           if (responseRazorpay.data.success) {
+            setLoading(false);
             initPay(responseRazorpay.data.order);
           }
 
@@ -171,6 +176,8 @@ const PlaceOrder = () => {
     } catch (error) {
       console.log(error);
       toast.error(error.message);
+      setLoading(false);
+    } finally {
       setLoading(false);
     }
   };
